@@ -1,3 +1,1 @@
-- Updated for Unity 6000.0.23f1
-- Replaced UI assets with Kenney assets
-- Fixed a few weird things
+- Updated for Unity 6000.2.6f2
