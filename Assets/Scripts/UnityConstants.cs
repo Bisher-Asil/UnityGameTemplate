@@ -72,6 +72,10 @@ namespace UnityConstants
         /// Index of layer 'UI'.
         /// </summary>
         public const int UI = 5;
+        /// <summary>
+        /// Index of layer 'AlwaysOnTopUI'.
+        /// </summary>
+        public const int AlwaysOnTopUI = 6;
 
         /// <summary>
         /// Bitmask of layer 'Default'.
@@ -93,6 +97,10 @@ namespace UnityConstants
         /// Bitmask of layer 'UI'.
         /// </summary>
         public const int UIMask = 1 << 5;
+        /// <summary>
+        /// Bitmask of layer 'AlwaysOnTopUI'.
+        /// </summary>
+        public const int AlwaysOnTopUIMask = 1 << 6;
     }
 
     public static class Scenes

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc7365797ec216e488c1c630d3d218b4, type: 3}
   m_Name: OneLineSettings
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: st.one-line.Editor::OneLine.Settings.Settings
   layer:
     enabled:
       value: 0
