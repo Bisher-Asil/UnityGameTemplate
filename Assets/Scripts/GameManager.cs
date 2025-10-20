@@ -1,22 +1,52 @@
-﻿using System;
-using System.Linq;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-using yaSingleton;
-using Random = UnityEngine.Random;
 
-[CreateAssetMenu(fileName = "GameManager", menuName = "Singletons/GameManager")]
-public class GameManager : Singleton<GameManager> {
-
-
-	protected override void Initialize() {
-		base.Initialize();
-	}
-
-	protected override void Deinitialize() {
-		base.Deinitialize();
-	}
+public class GameManager : MonoBehaviour
+{
+    public static GameManager instance;
+    
+    private int score = 0;
+    private bool isGameOver = false;
+    
+    void Awake()
+    {
+        // Singleton pattern - ensure only one GameManager exists
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    
+    public int GetScore()
+    {
+        return score;
+    }
+    
+    public void AddScore(int points)
+    {
+        if (!isGameOver)
+        {
+            score += points;
+            Debug.Log("Score: " + score);
+        }
+    }
+    
+    public bool IsGameOver()
+    {
+        return isGameOver;
+    }
+    
+    public void SetGameOver(bool gameOver)
+    {
+        isGameOver = gameOver;
+    }
+    
+    public void ResetScore()
+    {
+        score = 0;
+        isGameOver = false;
+    }
 }
