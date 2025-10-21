@@ -1,28 +1,40 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BirdController : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float flapForce = 6f;
+    [SerializeField] private float flapForce = 5f;
+    [SerializeField] private float downwardForce = 2f;
+    [SerializeField] private float maxFallSpeed = 10f;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
     
-void Update()
+    void Update()
     {
-        // Input detection for Space key or mouse click
+        // Input detection
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
-            if (!GameManager.instance.IsGameOver())
-            {
-                Flap();
-            }
+            Flap();
         }
         
-        // Check if bird went out of bounds (top/bottom)
-        if (transform.position.y > 10f || transform.position.y < -10f)
+        // Apply downward force for smoother falling
+        if (rb.linearVelocity.y > 0)
+        {
+            rb.linearVelocity += Vector2.down * downwardForce * Time.deltaTime;
+        }
+        
+        // Clamp fall speed
+        if (rb.linearVelocity.y < -maxFallSpeed)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, -maxFallSpeed);
+        }
+        
+        // Death by going off-screen (too high or too low)
+        if (transform.position.y > 10 || transform.position.y < -10)
         {
             Die();
         }
@@ -30,12 +42,16 @@ void Update()
     
 public void Flap()
     {
-        // Reset vertical velocity and apply upward impulse
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, flapForce);
+        // Play flap sound
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.PlayFlapSound();
+        }
+        
+        rb.linearVelocity = new Vector2(0, flapForce);
     }
     
-void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         // Detect collision with pipes or ground
         bool isPipe = collision.gameObject.CompareTag("Pipe");
