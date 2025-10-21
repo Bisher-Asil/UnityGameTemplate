@@ -4,6 +4,7 @@
     "com.baste.playerloopinterface": "https://github.com/Baste-RainGames/PlayerLoopInterface.git#master",
     "com.coffee.ui-effect": "5.5.3",
     "com.coffee.ui-particle": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
+    "com.coplaydev.unity-mcp": "https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity",
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
     "com.gemserk.selectionhistory": "1.5.6",
     "com.needle.compilation-visualizer": "https://github.com/needle-tools/compilation-visualizer.git#master",

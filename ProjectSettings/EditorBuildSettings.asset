@@ -11,6 +11,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene2D.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Scenes/GameScene.unity
+    guid: 4f4ff455ecfb1b744b11fa53d534394e
+  - enabled: 0
+    path: Assets/Scenes/StoreScene.unity
+    guid: 303fa836eeafb9c4f9f0b1449606ff8a
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity/GameScene.unity
+    guid: ddfffcc7274f5e54cbdf23d60c70919c
+  - enabled: 1
+    path: Assets/Scenes/StoreScene.unity/StoreScene.unity
+    guid: a84bbeec3846c334887b8d1323647e3d
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 7d08b87ae645fbe43b65157427ea17e6,
       type: 2}
