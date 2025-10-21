@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Bird
+  - Pipe
+  - Ground
   layers:
   - Default
   - TransparentFX
