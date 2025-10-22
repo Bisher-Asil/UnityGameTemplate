@@ -81,6 +81,7 @@ public class StoreUIManager : MonoBehaviour
             if (upgradeDisplayPrefab != null && upgradeContainer != null)
             {
                 GameObject displayObj = Instantiate(upgradeDisplayPrefab, upgradeContainer);
+                displayObj.SetActive(true); // Activate the instantiated display
                 UpgradeDisplay display = displayObj.GetComponent<UpgradeDisplay>();
 
                 if (display != null)

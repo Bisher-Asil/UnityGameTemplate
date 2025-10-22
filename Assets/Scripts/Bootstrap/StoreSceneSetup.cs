@@ -17,13 +17,13 @@ public class StoreSceneSetup : MonoBehaviour
             GameObject cameraObj = new GameObject("Main Camera");
             camera = cameraObj.AddComponent<Camera>();
             cameraObj.AddComponent<AudioListener>();
+            
+            // Configure camera for 2D
+            camera.orthographic = true;
+            camera.orthographicSize = 5f;
+            camera.backgroundColor = Color.black;
+            camera.transform.position = new Vector3(0, 0, -10);
         }
-
-        // Configure camera for store UI
-        camera.orthographic = true;
-        camera.orthographicSize = 10f;
-        camera.backgroundColor = Color.black;
-        camera.transform.position = new Vector3(0, 0, -10);
 
         Debug.Log("[StoreSceneSetup] StoreScene setup complete");
     }
