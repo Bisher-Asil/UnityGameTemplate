@@ -41,11 +41,39 @@ public class UpgradeDisplay : MonoBehaviour
     {
         this.upgrade = upgrade;
 
+        // Configure RectTransform for proper sizing
+        RectTransform rectTransform = GetComponent<RectTransform>();
+        if (rectTransform != null)
+        {
+            rectTransform.sizeDelta = new Vector2(600, 160);
+        }
+
+        // Configure text sizes
         if (upgradeNameText != null)
+        {
             upgradeNameText.text = upgrade.displayName;
+            upgradeNameText.fontSize = 32;
+            upgradeNameText.color = Color.white;
+        }
 
         if (upgradeDescriptionText != null)
+        {
             upgradeDescriptionText.text = upgrade.description;
+            upgradeDescriptionText.fontSize = 18;
+            upgradeDescriptionText.color = new Color(0.9f, 0.9f, 0.9f);
+        }
+
+        if (upgradeLevel != null)
+        {
+            upgradeLevel.fontSize = 20;
+            upgradeLevel.color = Color.yellow;
+        }
+
+        if (costText != null)
+        {
+            costText.fontSize = 20;
+            costText.color = Color.green;
+        }
 
         if (buyButton != null)
             buyButton.onClick.AddListener(OnBuyClicked);
